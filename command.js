@@ -6,7 +6,7 @@ const commands = [
     {
         name:"check",
         description : "replies with checked✅"
-    }
+    },
 ];
 
 const rest = new REST({ version: '10' }).setToken(TOKEN);
