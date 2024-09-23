@@ -7,23 +7,7 @@ const {generateShortId} = require("./controller/url")
 mongoDbConnect()
 
 
-const inappropriateWords = [
-    "arse", "arsehead", "arsehole", "ass", "ass hole", "asshole",
-    "bastard", "bitch", "bloody", "bollocks", "brotherfucker", "bugger", "bullshit",
-    "child-fucker", "Christ on a bike", "Christ on a cracker", "cock", "cocksucker", "crap", "cunt",
-    "dammit", "damned", "damn it", "dick", "dick-head", "dickhead", "dumb ass", "dumb-ass", "dumbass", "dyke",
-    "father-fucker", "fatherfucker", "fuck", "fucker", "fucking",
-    "god dammit", "god damn", "goddammit", "God damn", "goddamn", "Goddamn", "goddamned", "goddamnit", "godsdamn",
-    "hell", "holy shit", "horseshit", "in shit",
-    "jack-ass", "jackarse", "jackass","khate","rando", "Jesus Christ", "Jesus fuck", "Jesus H. Christ", "Jesus Harold Christ", "Jesus, Mary and Joseph", "Jesus wept",
-    "kike",
-    "mother fucker", "mother-fucker", "motherfucker","muji","machikney",
-    "nigga", "nigra",
-    "pigfucker", "piss", "prick", "pussy","retard","radi","randi","bhalu",
-    "shit", "shit ass", "shite", "sibling fucker", "sisterfuck", "sisterfucker", "slut", "son of a bitch", "son of a whore", "spastic", "sweet Jesus",
-    "twat","feet","fcuk",
-    "wanker"
-];
+const inappropriateWords = process.env.INAPPROPRIATE_WORDS.split(',');
 
 const client = new Client({ 
         intents: [
